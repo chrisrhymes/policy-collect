@@ -1,0 +1,35 @@
+{
+    "name": "chrisrhymes/policy-collect",
+    "description": "A Laravel Collection method to check a collection of models against a policy",
+    "type": "project",
+    "license": "Mit",
+    "authors": [
+        {
+            "name": "Chris Rhymes",
+            "email": "csrhymes@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ChrisRhymes\\PolicyCollect\\PolicyCollectServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "laravel/framework": "^6.16",
+        "orchestra/testbench": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {"ChrisRhymes\\PolicyCollect\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChrisRhymes\\PolicyCollect\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
