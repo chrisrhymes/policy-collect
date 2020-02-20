@@ -6,7 +6,7 @@ This package offers a collection method that will go through a collection of mod
 
 ## Installation
 ```php
-composer install chrisrhymes/policy-collect
+composer require chrisrhymes/policy-collect
 ```
 
 ## Usage
