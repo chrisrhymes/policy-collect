@@ -21,14 +21,9 @@ class PolicyCollectTest extends TestCase
     /** @test */
     public function policy_collection_on_array()
     {
-        try {
-            $collection = collect(['test', 'test2'])->policy();
-        } catch (\Exception $e) {
-            $this->assertEquals("Attempt to assign property 'can' of non-object", $e->getMessage());
-            return;
-        }
+        $this->expectErrorMessage('$model is not an instanceof Model');
 
-        $this->fail("Should have thrown exception");
+        collect(['test', 'test2'])->policy();
     }
 
     /** @test */

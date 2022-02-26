@@ -2,6 +2,8 @@
 
 namespace ChrisRhymes\PolicyCollect;
 
+use \Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 class PolicyCollectServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -17,6 +19,10 @@ class PolicyCollectServiceProvider extends \Illuminate\Support\ServiceProvider
         // Pass in a collection of eloquent models and optionally an array of additional policy methods to check
         Collection::macro('policy', function ($additionalMethods = []) {
             return $this->map( function ($model) use ($additionalMethods) {
+                
+                if (!$model instanceof Model) {
+                    throw new Exception('$model is not an instanceof Model');
+                }
 
                 $methods = collect([
                     'view',
